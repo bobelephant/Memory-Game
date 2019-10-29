@@ -1,0 +1,270 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.counter { 
+    text-align: center;
+}
+.mainTitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 70px;
+    color: #493a8b;
+    text-shadow: 0px 1px 1px #ddd,
+                 0px 2px 1px #d6d6d6,
+                 0px 3px 1px #ccc,
+                 0px 4px 1px #c5c5c5,
+                 0px 5px 1px #c1c1c1,
+                 0px 6px 1px #bbb,
+                 0px 7px 1px #777,
+                 0px 8px 3px rgba(100, 100, 100, 0.4),
+                 0px 9px 5px rgba(100, 100, 100, 0.1),
+                 0px 10px 7px rgba(100, 100, 100, 0.15),
+                 0px 11px 9px rgba(100, 100, 100, 0.2),
+                 0px 12px 11px rgba(100, 100, 100, 0.25),
+                 0px 13px 15px rgba(100, 100, 100, 0.3);
+    transition:all 1.5s ease-in-out;   
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    text-align: center;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #fcd071 0%, #9988e6 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #fcd071;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #9988e6;
+    font-size: 33px;
+}
+
+.deck .card.disable{ 
+    pointer-events: none;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+
+
+/*
+ * Styles for the Modal - inspiration https://www.w3schools.com/howto/howto_css_modals.asp
+ */
+
+
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    font
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #9988e6;
+    color: black;
+  }
+  
+  .modal-body {
+    padding: 2px 16px;
+    background-color: #9988e6;
+    color: black;
+  }
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #fcd071;
+    color: black;
+  }
+
+
+
+@media screen and (max-width: 350px) {
+    .deck {
+        width: 250px;
+        min-height: 280px;}
+    .deck .card {
+            height:50px;
+            width:50px;}
+            .score-panel {
+                text-align: left;
+                width: 250px;
+                margin-bottom: 10px;
+            }
+
+}
+
+
+@media screen and (min-width: 450px) and (max-width: 600px) {
+  .deck {
+      width: 450px;
+      min-height: 480px;
+    }
+  .deck .card {
+          height:90px;
+          width:90px;
+        }
+          .score-panel {
+              text-align: left;
+              width: 450px;
+              margin-bottom: 10px;
+          }
+
+}
+
+
+@media screen and (min-width: 601px) {
+.deck {
+    width: 650px;
+    min-height: 680px;
+  }
+.deck .card {
+        height:135px;
+        width:135px;
+      }
+        .score-panel {
+            text-align: left;
+            width: 600px;
+            margin-bottom: 10px;
+        }
+
+}

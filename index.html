@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MemoryGame</title>
+    <meta name="description" content="">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="mainTitle"> Memory Game</h1>
+            <div class="counter">
+                <span>Time <i class="fa fa-hourglass-half" title="Time"></i></span>
+                <span id="myTimer"></span>
+        </header>
+
+        <section class="score-panel">
+        	<ul class="stars">
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        	</ul>
+
+        	<span class="moves"> </span>  Moves
+
+            <div class="restart">
+        		<i class="fa fa-repeat"></i>
+            </div>
+        </section>
+
+        <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Congratulations</h2>
+                  </div>
+                  <div class="modal-body">
+                    <p id="result"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <h3>Try again to beat your score!</h3>
+                  </div>
+                </div>
+              
+        </div>
+
+        <ul class="deck">
+        </ul>
+    </div>
+
+    <script src="mgjs.js"></script>
+</body>
+</html>
